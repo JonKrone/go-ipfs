@@ -11,10 +11,11 @@ import (
 	e "github.com/ipfs/go-ipfs/core/commands/e"
 	"github.com/ipfs/go-ipfs/filestore"
 
-	lgc "github.com/ipfs/go-ipfs/commands/legacy"
 	cmds "gx/ipfs/QmabLouZTZwhfALuBcssPvkzhbYGMb4394huT7HY4LQ6d3/go-ipfs-cmds"
 	cid "gx/ipfs/QmcZfnkapfECQGcLZaf9B79NRg7cRa9EnZh4LSbkCzwNvY/go-cid"
 	"gx/ipfs/QmceUdzxkimdYsgtX733uNgzf1DLHyBKN6ehGSp85ayppM/go-ipfs-cmdkit"
+
+	lgc "github.com/ipfs/go-ipfs/commands/legacy"
 )
 
 var FileStoreCmd = &cmds.Command{
@@ -26,11 +27,6 @@ var FileStoreCmd = &cmds.Command{
 		"verify": lgc.NewCommand(verifyFileStore),
 		"dups":   lgc.NewCommand(dupsFileStore),
 	},
-}
-
-type lsEncoder struct {
-	errors bool
-	w      io.Writer
 }
 
 var lsFileStore = &cmds.Command{
